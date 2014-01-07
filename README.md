@@ -8,7 +8,7 @@ See [dokuwiki site](http://www.dokuwiki.org)
 
 * [hiera](http://docs.puppetlabs.com/hiera/1/index.html)
 * https://github.com/icalvete/puppet-common 
-* https://github.com/icalvete/puppet-dokuwiki for LDAP Auth
+* https://github.com/icalvete/puppet-389DirectoryServer for LDAP Auth
 
 ##Authors:
 
