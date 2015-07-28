@@ -8,9 +8,10 @@
 
   ServerName dokuwiki.<%= scope.lookupvar('dokuwiki::params::org_domain') %>
   DocumentRoot "<%= scope.lookupvar('dokuwiki::params::install_dir') -%>/dokuwiki"
-  ErrorLog '|/usr/bin/logger -p local3.info -t ::apache::<%= scope.lookupvar('apache2::environment') -%>::error'
+  #ErrorLog '|/usr/bin/logger -p local3.info -t ::apache::<%= scope.lookupvar('apache2::env') -%>::error'
+  ErrorLog  syslog:local3
   #CustomLog  ${APACHE_LOG_DIR}/dokuwiki.log common
-  CustomLog  '|/usr/bin/logger -p local3.info -t ::apache::<%= scope.lookupvar('apache2::environment') -%>::access' combined_sp
+  CustomLog  '|/usr/bin/logger -p local3.info -t ::apache::<%= scope.lookupvar('apache2::environment') -%>::access' combined_sp_proxy
 
         #   SSL Engine Switch:
         #   Enable/Disable SSL for this virtual host.
